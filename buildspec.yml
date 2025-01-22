@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Entered the install phase."
+      - pip3 install pandas numpy
+
+  pre_build:
+    commands:
+      - echo "Entered the pre_build phase."   
+
+  build:
+    commands:
+      - echo "Entered the build phase."
+      - python sample_code.py
+
+  post_build:
+    commands:
+      - echo "Entered the post_build phase."
+      
+artifacts:
+  files:
+    - '**/*'
+  name: my_project.zip
